@@ -4,7 +4,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://felixyunianto.com"),
+  metadataBase: new URL("https://felixyunianto.vercel.app"),
 
   title: {
     default: "Felix Yunianto | Frontend Developer",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Felix Yunianto | Frontend Developer",
     description:
       "Building modern websites with Next.js, Tailwind CSS, Framer Motion and Laravel.",
-    url: "https://felixyunianto.com",
+    url: "https://felixyunianto.vercel.app",
     siteName: "Felix Yunianto",
     images: [
       {
