@@ -18,7 +18,7 @@ export default function CTA() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DFFF4F]/80 blur-[120px] md:h-[500px] md:w-[500px] md:blur-[180px]"
+        className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DFFF4F]/80 blur-[120px] md:h-[500px] md:w-[500px] md:blur-[120px]"
       />
 
       <div className="relative mx-auto max-w-5xl">

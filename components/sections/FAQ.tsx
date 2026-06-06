@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 const faqs = [
   {
     question: "How long does it take to build a website?",
@@ -25,11 +21,6 @@ const faqs = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0 },
-};
-
 export default function FAQ() {
   return (
     <section
@@ -37,41 +28,21 @@ export default function FAQ() {
       className="relative overflow-hidden bg-[#050505] px-5 py-20 text-white sm:px-6 md:px-10 md:py-28"
     >
       <div className="relative mx-auto max-w-7xl">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ staggerChildren: 0.12 }}
-          className="mb-12 max-w-3xl md:mb-14"
-        >
-          <motion.p
-            variants={fadeUp}
-            className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#DFFF4F] md:mb-5 md:text-sm"
-          >
+        <div className="mb-12 max-w-3xl md:mb-14">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#DFFF4F] md:mb-5 md:text-sm">
             FAQ
-          </motion.p>
+          </p>
 
-          <motion.h2
-            variants={fadeUp}
-            className="text-4xl font-bold leading-[1.06] tracking-[-0.05em] md:text-6xl"
-          >
+          <h2 className="text-4xl font-bold leading-[1.06] tracking-[-0.05em] md:text-6xl">
             Questions before starting a project.
-          </motion.h2>
-        </motion.div>
+          </h2>
+        </div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ staggerChildren: 0.1 }}
-          className="grid gap-4 md:grid-cols-2 md:gap-5"
-        >
+        <div className="grid gap-4 md:grid-cols-2 md:gap-5">
           {faqs.map((faq) => (
-            <motion.div
+            <div
               key={faq.question}
-              variants={fadeUp}
-              whileHover={{ y: -6 }}
-              className="rounded-[26px] border border-white/10 bg-white/[0.03] p-6 transition hover:border-[#DFFF4F]/35 md:rounded-[32px] md:p-7"
+              className="rounded-[26px] border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#DFFF4F]/35 md:rounded-[32px] md:p-7"
             >
               <h3 className="text-lg font-semibold leading-snug tracking-[-0.03em] md:text-xl">
                 {faq.question}
@@ -80,9 +51,9 @@ export default function FAQ() {
               <p className="mt-4 text-sm leading-7 text-white/60">
                 {faq.answer}
               </p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

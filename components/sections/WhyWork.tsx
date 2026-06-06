@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 const benefits = [
   {
     title: "Business-first design",
@@ -21,72 +17,32 @@ const benefits = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0 },
-};
-
 export default function WhyWork() {
   return (
     <section
       id="why"
       className="relative overflow-hidden bg-[#050505] px-5 py-20 text-white sm:px-6 md:px-10 md:py-28"
     >
-      <div className="absolute -left-24 top-32 h-[280px] w-[280px] rounded-full bg-[#DFFF4F]/10 blur-[100px] md:left-0 md:h-[420px] md:w-[420px] md:blur-[150px]" />
+      <div className="pointer-events-none absolute -left-24 top-32 h-[280px] w-[280px] rounded-full bg-[#DFFF4F]/10 blur-[90px] md:left-0 md:h-[420px] md:w-[420px] md:blur-[130px]" />
 
       <div className="relative mx-auto max-w-7xl">
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ staggerChildren: 0.12 }}
-          className="mb-12 max-w-4xl md:mb-16"
-        >
-          <motion.p
-            variants={fadeUp}
-            transition={{ duration: 0.7 }}
-            className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#DFFF4F] md:mb-5 md:text-sm"
-          >
+        <div className="mb-12 max-w-4xl md:mb-16">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#DFFF4F] md:mb-5 md:text-sm">
             Why Work With Me
-          </motion.p>
+          </p>
 
-          <motion.h2
-            variants={fadeUp}
-            transition={{ duration: 0.8 }}
-            className="text-4xl font-bold leading-[1.06] tracking-[-0.05em] md:text-6xl"
-          >
+          <h2 className="text-4xl font-bold leading-[1.06] tracking-[-0.05em] md:text-6xl">
             I focus on websites that look premium and work smoothly.
-          </motion.h2>
-        </motion.div>
+          </h2>
+        </div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ staggerChildren: 0.14 }}
-          className="grid gap-4 md:grid-cols-2 md:gap-5"
-        >
+        <div className="grid gap-4 md:grid-cols-2 md:gap-5">
           {benefits.map((item, index) => (
-            <motion.div
+            <div
               key={item.title}
-              variants={fadeUp}
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] p-6 transition-colors duration-300 hover:border-[#DFFF4F]/40 md:rounded-[34px] md:p-8"
+              className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-2 hover:border-[#DFFF4F]/40 md:rounded-[34px] md:p-8"
             >
-              <motion.div
-                animate={{
-                  opacity: [0.02, 0.08, 0.02],
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: index * 0.4,
-                }}
-                className="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[#DFFF4F] blur-[80px] md:h-44 md:w-44 md:blur-[90px]"
-              />
+              <div className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-[#DFFF4F]/10 blur-[70px] transition-opacity duration-300 group-hover:opacity-100 md:h-44 md:w-44 md:blur-[80px]" />
 
               <div className="relative z-10">
                 <span className="text-sm font-semibold text-[#DFFF4F]">
@@ -101,9 +57,9 @@ export default function WhyWork() {
                   {item.desc}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

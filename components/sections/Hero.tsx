@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -105,9 +106,12 @@ export default function Hero() {
               <div className="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/10 md:rounded-[44px]" />
               <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#DFFF4F]/70 to-transparent md:inset-x-10" />
 
-              <img
+              <Image
                 src="/images/hero-mockup.png"
                 alt="Website and mobile mockup"
+                width={1600}
+                height={1000}
+                priority
                 className="relative z-10 w-full select-none lg:w-[115%] lg:max-w-none lg:-translate-x-6"
               />
             </motion.div>

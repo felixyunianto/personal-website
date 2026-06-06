@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function AboutSection() {
@@ -10,12 +7,7 @@ export default function AboutSection() {
       className="relative overflow-hidden bg-[#050505] px-5 py-20 text-white sm:px-6 md:px-10 md:py-28"
     >
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.7 }}
-        >
+        <div>
           <span className="mb-5 inline-flex rounded-full border border-[#DFFF4F]/30 bg-[#DFFF4F]/10 px-4 py-2 text-sm font-medium text-[#DFFF4F]">
             About Me
           </span>
@@ -55,24 +47,18 @@ export default function AboutSection() {
               ),
             )}
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96, y: 20 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.8 }}
-          className="relative mx-auto w-full max-w-[420px] sm:max-w-[480px] lg:max-w-none"
-        >
+        <div className="relative mx-auto w-full max-w-[420px] sm:max-w-[480px] lg:max-w-none">
           <div className="absolute inset-0 rounded-[28px] border border-[#DFFF4F]/20 md:rounded-[32px]" />
 
           <div className="relative rounded-[28px] border border-white/10 bg-white/[0.04] p-3 shadow-2xl md:rounded-[32px] md:p-4">
             <div className="relative h-[430px] overflow-hidden rounded-[22px] bg-gradient-to-b from-white/10 to-transparent sm:h-[500px] md:h-[560px] md:rounded-[26px]">
               <Image
                 src="/images/felix.png"
-                alt="Personal photo"
+                alt="Felix Yunianto"
                 fill
-                priority
+                sizes="(max-width: 768px) 100vw, 45vw"
                 className="object-cover object-center"
               />
 
@@ -91,7 +77,7 @@ export default function AboutSection() {
             <p className="text-sm font-medium">Available for</p>
             <p className="text-lg font-bold">Freelance</p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
